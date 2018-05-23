@@ -6,7 +6,19 @@
 
     <groupId>com.lyq3.rabbit</groupId>
     <artifactId>RabbitMQ-Learn</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>HelloWorld</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
