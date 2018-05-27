@@ -8,6 +8,14 @@ import com.rabbitmq.client.Channel;
 /**
  * 日志生产者
  * @author 卡卢比
+ *
+ *
+ *
+ * Topic exchange
+ * Topic exchange非常强大，可以实现其他任意路由器的功能。
+ * </br>当一个队列以绑定键#绑定，它将会接收到所有的消息，而无视路由键（实际是绑定键#匹配了任意的路由键）。----这和fanout路由器一样了。
+ * </br>当*和#这两个特殊的字符不出现在绑定键中，Topic exchange就会和direct exchange类似了。
+ *
  */
 
 public class EmitLogTopic {
