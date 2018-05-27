@@ -12,6 +12,7 @@
         <module>HelloWorld</module>
         <module>Task-Work</module>
         <module>Exchange</module>
+        <module>Exchange-Direct</module>
     </modules>
 
     <dependencies>
