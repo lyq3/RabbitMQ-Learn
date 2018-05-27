@@ -13,6 +13,7 @@
         <module>Task-Work</module>
         <module>Exchange</module>
         <module>Exchange-Direct</module>
+        <module>Exchange-Topic</module>
     </modules>
 
     <dependencies>
