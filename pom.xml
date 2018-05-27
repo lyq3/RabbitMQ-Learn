@@ -11,6 +11,7 @@
     <modules>
         <module>HelloWorld</module>
         <module>Task-Work</module>
+        <module>Exchange</module>
     </modules>
 
     <dependencies>
