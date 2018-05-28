@@ -1,0 +1,6 @@
+spring:
+    rabbitmq: 112.74.57.197
+        username: lyq
+        password: 92932266
+    application:
+        name: spirng-boot-rabbitmq

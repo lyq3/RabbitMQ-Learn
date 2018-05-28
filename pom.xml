@@ -14,6 +14,7 @@
         <module>Exchange</module>
         <module>Exchange-Direct</module>
         <module>Exchange-Topic</module>
+        <module>springboot-rabbit</module>
     </modules>
 
     <dependencies>
