@@ -1,4 +1,4 @@
-package com.lyq3.rabbit.springboot;
+package com.lyq3.rabbit.springboot.hello;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

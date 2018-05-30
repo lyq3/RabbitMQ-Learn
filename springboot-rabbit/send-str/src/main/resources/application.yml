@@ -1,0 +1,8 @@
+spring:
+    rabbitmq:
+        host: 112.74.57.197
+        username: lyq
+        password: 92932266
+        port: 5672
+    application:
+        name: spirng-boot-rabbitmq

@@ -1,4 +1,4 @@
-package com.lyq3.rabbit.springboot;
+package com.lyq3.rabbit.springboot.hello;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

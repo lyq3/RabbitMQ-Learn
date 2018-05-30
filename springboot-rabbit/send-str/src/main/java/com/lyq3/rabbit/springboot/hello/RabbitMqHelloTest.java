@@ -1,5 +1,6 @@
-package com.lyq3.rabbit.springboot;
+package com.lyq3.rabbit.springboot.hello;
 
+import com.lyq3.rabbit.springboot.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
