@@ -7,6 +7,7 @@ import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,30 +19,29 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
-    final static String queueName = "spring-boot";
+    @Bean(name="message")
+    public Queue queueMessage() {
+        return new Queue("topic.message");
+    }
 
-    @Bean
-    Queue queue() {
-        return new Queue(queueName, false);
+    @Bean(name="messages")
+    public Queue queueMessages() {
+        return new Queue("topic.messages");
     }
 
     @Bean
-    TopicExchange exchange() {
-        return new TopicExchange("spring-boot-exchange");
+    public TopicExchange exchange() {
+        return new TopicExchange("exchange");
     }
 
     @Bean
-    Binding binding(Queue queue, TopicExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(queueName);
+    Binding bindingExchangeMessage(@Qualifier("message") Queue queueMessage, TopicExchange exchange) {
+        return BindingBuilder.bind(queueMessage).to(exchange).with("topic.message");
     }
 
     @Bean
-    SimpleMessageListenerContainer container(ConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
-        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-        container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(queueName);
-        container.setMessageListener(listenerAdapter);
-        return container;
+    Binding bindingExchangeMessages(@Qualifier("messages") Queue queueMessages, TopicExchange exchange) {
+        return BindingBuilder.bind(queueMessages).to(exchange).with("topic.#");//*表示一个词,#表示零个或多个词
     }
 
 }
