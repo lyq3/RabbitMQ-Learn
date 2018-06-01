@@ -15,6 +15,7 @@
     <modules>
         <module>send-object</module>
         <module>send-str</module>
+        <module>topic-exchange</module>
     </modules>
 
     <dependencies>
